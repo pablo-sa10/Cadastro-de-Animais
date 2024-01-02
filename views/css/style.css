@@ -1,0 +1,23 @@
+body{
+   background-color: beige;
+}
+
+.navbar{
+    padding-left: 20px;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.img{
+    width: 20%;
+    height: 20%;
+}
+
+.cor{
+    background-color: #fba444;
+    color: #3d2925;
+}
+
+.titulo{
+    color: #3d2925
+}
