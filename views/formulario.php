@@ -2,7 +2,7 @@
     include '../includes/conexao.php';
     require_once '../modelo/animal.php';
     require_once '../modelo/AnimalRepositorio.php';
-    
+    require_once '../modelo/cadastro.php'
 ?>
 
 

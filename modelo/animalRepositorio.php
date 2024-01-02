@@ -27,4 +27,16 @@ class Repositorio{
 
         return $dadosAnimais;
     }
+
+    public function novoAnimal(){
+        $sql2 = "INSERT INTO Animais (nome, sexo) VALUES (?, ?)";
+        $statement = $this->pdo->query($sql2);
+        $animais = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        $dadosAnimais = array_map(function($animal){
+            return $this->objeto($animal);
+        }, $animais);
+
+        return $dadosAnimais;
+    }
 }
