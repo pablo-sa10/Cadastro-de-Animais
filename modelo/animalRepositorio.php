@@ -35,4 +35,23 @@ class Repositorio{
         $statement->bindValue(2, $animal->getSexo());
         $statement->execute();
     }
+
+    public function buscar($id){
+        $sql3 = "SELECT * FROM Animais WHERE id = ?";
+        $statement = $this->pdo->prepare($sql3);
+        $statement->bindValue(1, $id);
+        $statement->execute();
+
+        $dados = $statement->fetch(PDO::FETCH_ASSOC);
+
+        return $this->objeto($dados);
+    } 
+
+    public function atualizar(Animais $animal){
+        $sql4 = "UPDATE Animais SET nome = ?, sexo = ? WHERE id =?";
+        $statement = $this->pdo->prepare($sql4);
+        $statement->bindValue(1, $animal->getNome());
+        $statement->bindValue(2, $animal->getSexo());
+        $statement->execute();
+    }
 }

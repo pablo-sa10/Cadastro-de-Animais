@@ -1,6 +1,6 @@
 <?php
 
-include '../includes/conexao.php';
+include '../modelo/conexao.php';
 require_once '../modelo/animal.php';
 require_once '../modelo/animalRepositorio.php';
 
@@ -40,7 +40,7 @@ $dadosAnimais = $animalRepositorio->getAnimal();
                         <a class="nav-link" href="formulario.php">Adiconar Animal</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Editar Animal</a>
+                        <a class="nav-link" href="editar.php">Editar Animal</a>
                     </li>
                 </ul>
             </div>
@@ -63,7 +63,7 @@ $dadosAnimais = $animalRepositorio->getAnimal();
                         <th scope="row"><?= $dados->getId() ?></th>
                         <td><?= $dados->getNome() ?></td>
                         <td><?= $dados->getSexo() ?></td>
-                        <td><input name="editar" type="submit" value="Editar" class="btn btn-dark"></input></td>
+                        <td><a href="editar.php"<?= $dados->getId() ?>><input name="editar" type="submit" value="Editar" class="btn btn-dark"></input></a></td>
                     </tr>
                 <?php endforeach ?>
             </tbody>

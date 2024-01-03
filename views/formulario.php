@@ -1,5 +1,5 @@
 <?php
-       include '../includes/conexao.php';
+       include '../modelo/conexao.php';
        require_once '../modelo/animal.php';
        require_once '../modelo/AnimalRepositorio.php';
 
@@ -49,9 +49,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="formulario.php">Adicionar Animal</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Editar Animal</a>
                     </li>
                 </ul>
             </div>
