@@ -28,15 +28,11 @@ class Repositorio{
         return $dadosAnimais;
     }
 
-    public function novoAnimal(){
+    public function novoAnimal(Animais $animal){
         $sql2 = "INSERT INTO Animais (nome, sexo) VALUES (?, ?)";
-        $statement = $this->pdo->query($sql2);
-        $animais = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-        $dadosAnimais = array_map(function($animal){
-            return $this->objeto($animal);
-        }, $animais);
-
-        return $dadosAnimais;
+        $statement = $this->pdo->prepare($sql2);
+        $statement->bindValue(1, $animal->getNome());
+        $statement->bindValue(2, $animal->getSexo());
+        $statement->execute();
     }
 }

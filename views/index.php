@@ -34,10 +34,10 @@ $dadosAnimais = $animalRepositorio->getAnimal();
             <div class="collapse navbar-collapse col-md-4 d-flex" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Adiconar Animal</a>
+                        <a class="nav-link" href="formulario.php">Adiconar Animal</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Editar Animal</a>
@@ -54,20 +54,26 @@ $dadosAnimais = $animalRepositorio->getAnimal();
                     <th scope="col">#</th>
                     <th scope="col">Animal</th>
                     <th scope="col">Sexo</th>
-                    <th class="w-20" scope="col">Editar</th>
+                    <th class="col" scope="col">Editar</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($dadosAnimais as $dados): ?>
-                <tr>
-                    <th scope="row"><?= $dados->getId()?></th>
-                    <td><?= $dados->getNome()?></td>
-                    <td><?= $dados->getSexo()?></td>
-                </tr>
+                <?php foreach ($dadosAnimais as $dados) : ?>
+                    <tr>
+                        <th scope="row"><?= $dados->getId() ?></th>
+                        <td><?= $dados->getNome() ?></td>
+                        <td><?= $dados->getSexo() ?></td>
+                        <td><input name="editar" type="submit" value="Editar" class="btn btn-dark"></input></td>
+                    </tr>
                 <?php endforeach ?>
             </tbody>
         </table>
     </div>
+    
+    <div class="d-flex justify-content-center my-5">
+        <a class="botao-cadastrar btn btn-dark" href="formulario.php">Cadastrar Animal</a>
+    </div>
+
 </body>
 
 </html>
