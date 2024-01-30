@@ -17,6 +17,9 @@ class Conexao{
     }
 
     public function getConexao(){
+        if (!$this->conn) {
+            $this->conectar();
+        }
         return $this->conn;
     }
 }

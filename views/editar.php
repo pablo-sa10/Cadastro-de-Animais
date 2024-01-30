@@ -21,6 +21,7 @@ if (isset($_FILES['editar'])) {
     $animal = $animalRepositroio->buscar($_GET['id']);
 }
 
+
 ?>
 
 <!DOCTYPE html>
